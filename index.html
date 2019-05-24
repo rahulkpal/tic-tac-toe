@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Tic Tac Toe</title>
+  </head>
+  <style media="screen">
+  body {
+    background-image: url('bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .newGame {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .mainContent {
+    /*margin-top: 5%;*/
+    background-color: rgb(236,240,241, 0.5);
+  }
+
+  .mainDiv {
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .bigText {
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 80px;
+    height: 8rem;
+  }
+
+  .playerDiv {
+    background-color: rgb(236,240,241, 0.5);
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .playerDivFull {
+    background-color: rgb(236,240,241);
+  }
+
+  .playerInfo {
+    text-align: center;
+  }
+
+  h5 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 30px;
+  }
+
+  .base {
+    margin-right: 15px;
+    margin-left: 15px;
+    border-bottom: 2px solid gray;
+  }
+
+  .minBase {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .everyCol {
+    border-right: 2px solid gray;
+  }
+
+  .pr {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  #results {
+    font-size: 40px;
+  }
+  </style>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row newGame">
+        <div class="col-lg-12">
+          <h1 style="text-align: center;"><button class="btn pr" style="opacity: 0.7;" onclick="clean();">New Game</button></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div id="p1" class="playerDiv">
+            <h5 class="playerInfo" id="playerOne">X</h5>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="mainContent">
+            <div class="container mainDiv" >
+              <div class="row base">
+                <div class="col-lg-4 col-md-4 col-sm-4 everyCol">
+                  <p class="bigText" id="11"></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 everyCol">
+                  <p class="bigText" id="12"></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="bigText" id="13"></p>
+                </div>
+              </div>
+              <div class="row base">
+                <div class="col-lg-4 col-md-4 col-sm-4 everyCol">
+                  <p class="bigText" id="21"></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 everyCol">
+                  <p class="bigText" id="22"></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="bigText" id="23"></p>
+                </div>
+              </div>
+              <div class="row minBase">
+                <div class="col-lg-4 col-md-4 col-sm-4 everyCol">
+                  <p class="bigText" id="31"></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 everyCol">
+                  <p class="bigText" id="32"></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="bigText" id="33"></p>
+                </div>
+              </div>
+            </div>
+            <div id="results" class="container">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div id="p2" class="playerDiv">
+            <h5 class="playerInfo" id="playerTwo">O <span id="p2r" style="font-family: 'Roboto Mono', monospace;"></span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="logic.js" charset="utf-8"></script>
+</html>
